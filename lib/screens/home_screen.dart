@@ -39,6 +39,14 @@ class HomeScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              genre("클래식"),
+              Expanded(
+                child: futurebuilder(showsCCCA),
+              ),
+              genre("뮤지컬"),
+              Expanded(
+                child: futurebuilder(showsGGGA),
+              ),
               genre("공연"),
               Expanded(
                 child: futurebuilder(showsAAAA),
@@ -50,10 +58,6 @@ class HomeScreen extends StatelessWidget {
               genre("대중무용"),
               Expanded(
                 child: futurebuilder(showsBBBE),
-              ),
-              genre("클래식"),
-              Expanded(
-                child: futurebuilder(showsCCCA),
               ),
               genre("국악"),
               Expanded(
@@ -70,10 +74,6 @@ class HomeScreen extends StatelessWidget {
               genre("서커스/마술"),
               Expanded(
                 child: futurebuilder(showsEEEB),
-              ),
-              genre("뮤지컬"),
-              Expanded(
-                child: futurebuilder(showsGGGA),
               ),
             ],
           ),

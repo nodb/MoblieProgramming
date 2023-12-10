@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:showview/models/show_detail_model.dart';
 import 'package:showview/services/api_service.dart';
 
@@ -32,11 +33,44 @@ class DetailScreen extends StatefulWidget {
 
 class _DetailScreenState extends State<DetailScreen> {
   late Future<ShowDetailModel> show;
+  late SharedPreferences prefs;
+  bool isLiked = false;
+
+  Future initPrefs() async {
+    prefs = await SharedPreferences.getInstance();
+    final likedShows = prefs.getStringList('likedShows');
+    if (likedShows != null) {
+      if (likedShows.contains(widget.id) == true) {
+        isLiked = true;
+        setState(() {
+          isLiked = true;
+        });
+      }
+    } else {
+      await prefs.setStringList('likedShows', []);
+    }
+  }
 
   @override
   void initState() {
     super.initState();
     show = ApiService.getShowById(widget.id);
+    initPrefs();
+  }
+
+  onHeartTap() async {
+    final likedShows = prefs.getStringList('likedShows');
+    if (likedShows != null) {
+      if (isLiked) {
+        likedShows.remove(widget.id);
+      } else {
+        likedShows.add(widget.id);
+      }
+      await prefs.setStringList('likedShows', likedShows);
+      setState(() {
+        isLiked = !isLiked;
+      });
+    }
   }
 
   @override
@@ -48,6 +82,14 @@ class _DetailScreenState extends State<DetailScreen> {
         elevation: 2,
         backgroundColor: Colors.black,
         foregroundColor: const Color(0xfff89e86),
+        actions: [
+          IconButton(
+            onPressed: onHeartTap,
+            icon: Icon(
+              isLiked ? Icons.favorite : Icons.favorite_outline_outlined,
+            ),
+          )
+        ],
         title: Text(
           widget.title,
           style: const TextStyle(
