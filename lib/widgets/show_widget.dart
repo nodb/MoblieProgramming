@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:toonflix/screens/detail_screen.dart';
+import 'package:showview/screens/detail_screen.dart';
 
 class Show extends StatelessWidget {
   final String id,
@@ -85,28 +85,42 @@ class Show extends StatelessWidget {
           Hero(
             tag: id,
             child: Container(
-              width: 250,
+              width: 150,
+              height: 200,
               clipBehavior: Clip.hardEdge,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
-                boxShadow: [
+                boxShadow: const [
                   BoxShadow(
                     blurRadius: 15,
-                    offset: const Offset(10, 10),
-                    color: Colors.black.withOpacity(0.3),
-                  )
+                    // offset: const Offset(10, 10),
+                    // color: Colors.black.withOpacity(0.3),
+                  ),
                 ],
               ),
-              child: Image.network(img),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(15),
+                child: Image.network(
+                  img,
+                  width: 150,
+                  height: 200,
+                  fit: BoxFit.cover,
+                ),
+              ),
             ),
           ),
           const SizedBox(
             height: 10,
           ),
-          Text(
-            title,
-            style: const TextStyle(
-              fontSize: 22,
+          SizedBox(
+            width: 150,
+            child: Text(
+              title,
+              style: const TextStyle(
+                fontSize: 14,
+                color: Colors.white,
+              ),
+              overflow: TextOverflow.clip, // Handle text overflow with ellipsis
             ),
           ),
         ],

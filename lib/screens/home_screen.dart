@@ -1,21 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:toonflix/models/show_model.dart';
-import 'package:toonflix/services/api_service.dart';
-import 'package:toonflix/widgets/show_widget.dart';
+import 'package:showview/models/show_model.dart';
+import 'package:showview/services/api_service.dart';
+import 'package:showview/widgets/show_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
 
-  final Future<List<ShowModel>> shows = ApiService.getShows();
+  final Future<List<ShowModel>> showsAAAA = ApiService.getShows('AAAA');
+  final Future<List<ShowModel>> showsBBBC = ApiService.getShows('BBBC');
+  final Future<List<ShowModel>> showsBBBE = ApiService.getShows('BBBE');
+  final Future<List<ShowModel>> showsCCCA = ApiService.getShows('CCCA');
+  final Future<List<ShowModel>> showsCCCC = ApiService.getShows('CCCC');
+  final Future<List<ShowModel>> showsCCCD = ApiService.getShows('CCCD');
+  final Future<List<ShowModel>> showsEEEA = ApiService.getShows('EEEA');
+  final Future<List<ShowModel>> showsEEEB = ApiService.getShows('EEEB');
+  final Future<List<ShowModel>> showsGGGA = ApiService.getShows('GGGA');
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.black,
       appBar: AppBar(
         centerTitle: true,
         elevation: 2,
-        backgroundColor: const Color(0xff1b263b),
+        backgroundColor: Colors.black,
         foregroundColor: const Color(0xfff89e86),
         title: const Text(
           "공연",
@@ -25,23 +33,80 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
       ),
-      body: FutureBuilder(
-          future: shows,
-          builder: (context, snapshot) {
-            if (snapshot.hasData) {
-              return Column(
-                children: [
-                  const SizedBox(
-                    height: 50,
-                  ),
-                  Expanded(child: makeList(snapshot))
-                ],
-              );
-            }
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
-          }),
+      body: SingleChildScrollView(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxHeight: 3100),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              genre("공연"),
+              Expanded(
+                child: futurebuilder(showsAAAA),
+              ),
+              genre("무용"),
+              Expanded(
+                child: futurebuilder(showsBBBC),
+              ),
+              genre("대중무용"),
+              Expanded(
+                child: futurebuilder(showsBBBE),
+              ),
+              genre("클래식"),
+              Expanded(
+                child: futurebuilder(showsCCCA),
+              ),
+              genre("국악"),
+              Expanded(
+                child: futurebuilder(showsCCCC),
+              ),
+              genre("대중음악"),
+              Expanded(
+                child: futurebuilder(showsCCCD),
+              ),
+              genre("복합"),
+              Expanded(
+                child: futurebuilder(showsEEEA),
+              ),
+              genre("서커스/마술"),
+              Expanded(
+                child: futurebuilder(showsEEEB),
+              ),
+              genre("뮤지컬"),
+              Expanded(
+                child: futurebuilder(showsGGGA),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Padding genre(genre) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+      child: Text(
+        genre,
+        style: const TextStyle(
+          fontSize: 20,
+          fontWeight: FontWeight.w600,
+          color: Colors.white,
+        ),
+      ),
+    );
+  }
+
+  FutureBuilder<List<ShowModel>> futurebuilder(future) {
+    return FutureBuilder(
+      future: future,
+      builder: (context, snapshot) {
+        if (snapshot.hasData) {
+          return makeList(snapshot);
+        }
+        return const Center(
+          child: CircularProgressIndicator(),
+        );
+      },
     );
   }
 
@@ -51,7 +116,7 @@ class HomeScreen extends StatelessWidget {
       scrollDirection: Axis.horizontal, // 스크롤 방향
       itemCount: snapshot.data!.length,
       padding: const EdgeInsets.symmetric(
-        vertical: 10,
+        vertical: 0,
         horizontal: 20,
       ),
       itemBuilder: (context, index) {
