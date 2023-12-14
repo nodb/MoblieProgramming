@@ -26,7 +26,7 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: Colors.black,
         foregroundColor: const Color(0xfff89e86),
         title: const Text(
-          "공연",
+          "쇼:뷰",
           style: TextStyle(
             fontSize: 24,
             fontWeight: FontWeight.w300,
