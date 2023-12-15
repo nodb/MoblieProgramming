@@ -50,7 +50,7 @@ http 패키지를 통해 구현
 
 - [shared_preferences 2.2.2 | pub.dev](https://pub.dev/packages/shared_preferences)
 
-### install
+### Install
 ```
 flutter pub add http
 flutter pub add shared_preferences
