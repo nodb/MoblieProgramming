@@ -2,7 +2,7 @@
 <img alt = "쇼뷰로고" src="https://github.com/nodb/FestivalMap/assets/71473708/ead7612d-2e25-4912-89bd-da4f14b0d825" width="200">
 
 ## ✍ Project Introduction
-**"쇼:뷰"** 은 **Flutter**와 **Dart**를 이용한 국내 공연에 대한 정보를 가져오는 애플리케이션으으로 공연에 대한 리스트 페이지 기능과 상세 페이지 기능을 제공합니다.
+**"쇼:뷰"** 은 **Flutter**와 **Dart**를 이용한 국내 공연에 대한 정보를 가져오는 애플리케이션으로 공연에 대한 리스트 페이지 기능과 상세 페이지 기능을 제공합니다.
 
 ## 🗂️ Project Structure
 프로젝트 Show:View의 'main' branch 디렉토리 구조입니다.
