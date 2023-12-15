@@ -67,6 +67,10 @@ flutter pub add shared_preferences
 - [tistory | Hero](https://altongmon.tistory.com/1015) - 애니메이션 위젯(Hero)
 - [tistory | SharedPreferences](https://newland435.tistory.com/102) - 저장 패키지(SharedPreferences)
 
+## 📦 Install
+- [showview.apk - 디버깅 버전](https://github.com/nodb/MoblieProgramming/releases)
+- 모바일 기기에 apk를 다운로드 후 설치하면 실행가능합니다.
+
 ## ‍💻 Developer
 
 | 학과         | 학번     | 이름   |
