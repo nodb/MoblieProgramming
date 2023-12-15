@@ -57,13 +57,13 @@ flutter pub add shared_preferences
 ```
 
 ## 🔗 Reference
-- [codingapple | Flutter 설치](https://codingapple.com/unit/flutter-install-on-windows-and-mac/) - 플러터 개발 환경 및 설치
-- [velog.io | doctor error](https://velog.io/@oen/flutter-doctor-%EC%97%90%EB%9F%AC) - 플러터 doctor 오류 참고
-- [velog.io | Widget 이론](https://velog.io/@ho-taek/Flutter-%EC%9C%84%EC%A0%AF%EC%9D%84-%EC%95%8C%EC%95%84%EB%B3%B4%EC%9E%90) - 플러터 위젯 방식 참고
-- [velog.io | Plutter Http](https://velog.io/@tygerhwang/Flutter-Http-%ED%86%B5%EC%8B%A0-Rest-API-%ED%98%B8%EC%B6%9C%ED%95%98%EA%B8%B0-1%ED%8E%B8-Http) - 플러터 Http 통신
-- [colinch4.github.io | Flutter Rest API](https://colinch4.github.io/2023-12-12/10-15-20-001354-%ED%94%8C%EB%9F%AC%ED%84%B0%EC%99%80-restful-api-%ED%86%B5%EC%8B%A0-%EB%B0%A9%EB%B2%95/) - 플러터 REST API
-- [tistory | Hero](https://altongmon.tistory.com/1015) - 플러터 애니메이션 위젯(Hero)
-- [tistory | SharedPreferences](https://newland435.tistory.com/102) - 플러터 저장 패키지(SharedPreferences)
+- [codingapple | 설치](https://codingapple.com/unit/flutter-install-on-windows-and-mac/) - 플러터 개발 환경 및 설치
+- [velog.io | doctor error](https://velog.io/@oen/flutter-doctor-%EC%97%90%EB%9F%AC) - doctor 오류 참고
+- [velog.io | Widget 이론](https://velog.io/@ho-taek/Flutter-%EC%9C%84%EC%A0%AF%EC%9D%84-%EC%95%8C%EC%95%84%EB%B3%B4%EC%9E%90) - 위젯 방식 참고
+- [velog.io | Http](https://velog.io/@tygerhwang/Flutter-Http-%ED%86%B5%EC%8B%A0-Rest-API-%ED%98%B8%EC%B6%9C%ED%95%98%EA%B8%B0-1%ED%8E%B8-Http) - Http 통신
+- [colinch4.github.io | Rest API](https://colinch4.github.io/2023-12-12/10-15-20-001354-%ED%94%8C%EB%9F%AC%ED%84%B0%EC%99%80-restful-api-%ED%86%B5%EC%8B%A0-%EB%B0%A9%EB%B2%95/) - REST API
+- [tistory | Hero](https://altongmon.tistory.com/1015) - 애니메이션 위젯(Hero)
+- [tistory | SharedPreferences](https://newland435.tistory.com/102) - 저장 패키지(SharedPreferences)
 
 ## ‍💻 Developer
 
